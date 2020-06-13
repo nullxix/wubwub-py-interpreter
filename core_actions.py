@@ -62,6 +62,17 @@ def out(cursor):
 
 def outx(cursor):
     cursor.step()
+    c_tok = cursor.get_current_token()
+
+    try:
+        _i = int(c_tok)
+        _data = stack_master.retrieve("data", 0 - _i)
+        sys.stdout.write(_data)
+    except:
+        sys.stdout.write(" ")
+
+def outyy(cursor):
+    cursor.step()
     c_tok == cursor.get_current_token()
 
     try:
