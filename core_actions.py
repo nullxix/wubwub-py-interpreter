@@ -1,5 +1,6 @@
 import stack_master
 import table_king
+import sys
 from wub_config import EOS_DELIMITER, SUPER_EOS_DELIMITER
 
 def bark(cursor = "root"):
@@ -15,7 +16,7 @@ def sum(cursor):
     c_tok = cursor.get_current_token()
 
     try:
-        count = int(c_tok)
+        count = float(c_tok)
         sum = 0
         for i in range(0, count):
             sum += stack_master.pop("data")
@@ -30,7 +31,7 @@ def mult(cursor):
     c_tok = cursor.get_current_token()
 
     try:
-        count = int(c_tok)
+        count = float(c_tok)
         total = 1
         for i in range(0, count):
             total *= stack_master.pop("data")
@@ -54,7 +55,21 @@ def print_ln(cursor):
 
     print(' '.join(tokens))
 
+def out(cursor):
+    _top = stack_master.get_len("data") - 1
+    _data = stack_master.retrieve("data", _top)
+    sys.stdout.write(_data)
 
+def outx(cursor):
+    cursor.step()
+    c_tok == cursor.get_current_token()
+
+    try:
+        for i in range(0, int(c_tok)):
+            _data = stack_master.retrieve("data", -1 * i)
+            sys.stdout.write(_data)
+    except:
+        sys.stdout.write(" ")
 
 def def_func(cursor):
     tokens = []

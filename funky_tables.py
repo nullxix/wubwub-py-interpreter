@@ -32,7 +32,7 @@ core = [
         "runtime":"python"
     },
     {
-        'key':'add',
+        'key':'sum',
         'func': core_actions,
         'runtime':'python'
     },
@@ -41,4 +41,14 @@ core = [
         "func": core_actions.mult,
         "runtime":"python"
     },
+    {
+        "key":"out",
+        "func": core_actions.out,
+        "runtime":"python"
+    },
+    {
+        "key":"outx",
+        "func": core_actions.outx,
+        "runtime":"python"
+    }
 ]
